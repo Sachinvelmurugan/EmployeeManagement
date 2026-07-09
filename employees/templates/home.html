@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="card shadow p-5 text-center">
+
+    <h1 class="fw-bold">
+        Employee Management System
+    </h1>
+
+
+    <p class="lead mt-3">
+        Welcome to the Employee Management System
+    </p>
+
+
+    <div class="mt-4">
+
+        <a href="{% url 'dashboard' %}" class="btn btn-primary me-2">
+            Dashboard
+        </a>
+
+
+        <a href="{% url 'employee_list' %}" class="btn btn-success me-2">
+            Employee List
+        </a>
+
+
+        <a href="{% url 'add_employee' %}" class="btn btn-warning">
+            Add Employee
+        </a>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

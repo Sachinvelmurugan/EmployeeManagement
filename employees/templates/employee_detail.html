@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Employee Details
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+
+        <a href="{% url 'employee_list' %}" class="btn btn-secondary">
+            ← Back to Employee List
+        </a>
+
+
+        <h2 class="fw-bold mb-0">
+            Employee Details
+        </h2>
+
+
+        <div></div>
+
+
+    </div>
+
+
+
+    <div class="card shadow p-4">
+
+
+        <div class="card-body">
+
+
+            <h4 class="card-title mb-4">
+                {{ employee.name }}
+            </h4>
+
+
+            <p>
+                <strong>Name:</strong> {{ employee.name }}
+            </p>
+
+
+            <p>
+                <strong>Email:</strong> {{ employee.email }}
+            </p>
+
+
+            <p>
+                <strong>Phone:</strong> {{ employee.phone }}
+            </p>
+
+
+            <p>
+                <strong>Department:</strong> {{ employee.department }}
+            </p>
+
+
+            <p>
+                <strong>Position:</strong> {{ employee.position }}
+            </p>
+
+
+            <p>
+                <strong>Salary:</strong> {{ employee.salary }}
+            </p>
+
+
+            <p>
+                <strong>Joining Date:</strong> {{ employee.joining_date }}
+            </p>
+
+
+            <p>
+                <strong>Location:</strong> {{ employee.location }}
+            </p>
+
+
+
+            <a href="{% url 'edit_employee' employee.id %}" class="btn btn-primary">
+                Edit
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
