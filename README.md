@@ -62,3 +62,37 @@ A Django-based Employee Management System to manage employee records.
 
 
 
+git clone https://github.com/Sachinvelmurugan/EmployeeManagement.git
+
+
+
+2\. Go to project folder
+
+
+
+cd EmployeeManagement
+
+
+
+3\. Create virtual environment
+
+
+
+python -m venv venv
+
+
+
+4\. Activate virtual environment
+
+
+
+venv\\Scripts\\activate
+
+
+
+5\. Run server
+
+
+
+python manage.py runserver
+
