@@ -96,3 +96,103 @@ venv\\Scripts\\activate
 
 python manage.py runserver
 
+
+
+
+
+
+
+
+
+\## Screenshots
+
+
+
+\### Dashboard
+
+
+
+!\[Dashboard](screenshots/dashboard.png)
+
+
+
+\### Employee List
+
+
+
+!\[Employee List](screenshots/employee\_list.png)
+
+
+
+\### Add Employee
+
+
+
+!\[Add Employee](screenshots/add\_employee.png)
+
+
+
+\### Employee Details
+
+
+
+!\[Employee Details](screenshots/employee\_detail.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
