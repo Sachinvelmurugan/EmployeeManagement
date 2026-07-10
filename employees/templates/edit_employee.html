@@ -11,17 +11,27 @@ Edit Employee
 
 
 
+
 <div class="d-flex justify-content-between align-items-center mb-4">
 
 
     <a href="{% url 'employee_list' %}" class="btn btn-secondary">
-        ← Back
+
+        <i class="bi bi-arrow-left"></i>
+        Back
+
     </a>
 
 
+
+
     <h2 class="fw-bold mb-0">
+
+        <i class="bi bi-pencil-square"></i>
         Edit Employee
+
     </h2>
+
 
 
     <div></div>
@@ -32,7 +42,10 @@ Edit Employee
 
 
 
-<div class="card shadow p-4">
+
+
+
+<div class="card shadow-lg border-0 p-4">
 
 
     <form method="POST">
@@ -41,19 +54,41 @@ Edit Employee
         {% csrf_token %}
 
 
-        {{ form.as_p }}
+
+        <div class="mb-3">
+
+            {{ form.as_p }}
+
+        </div>
+
+
 
 
 
         <button type="submit" class="btn btn-primary">
-            Update
+
+            <i class="bi bi-check-circle-fill"></i>
+            Update Employee
+
         </button>
+
+
+
+
+        <a href="{% url 'employee_list' %}" class="btn btn-secondary">
+
+            Cancel
+
+        </a>
+
 
 
     </form>
 
 
 </div>
+
+
 
 
 

@@ -10,93 +10,262 @@ Employee Details
 {% block content %}
 
 
+
 <div class="container mt-5">
 
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
-
-
-        <a href="{% url 'employee_list' %}" class="btn btn-secondary">
-            ← Back to Employee List
-        </a>
-
-
-        <h2 class="fw-bold mb-0">
-            Employee Details
-        </h2>
-
-
-        <div></div>
-
-
-    </div>
 
 
 
-    <div class="card shadow p-4">
+<div class="d-flex justify-content-between align-items-center mb-4">
 
 
-        <div class="card-body">
+    <a href="{% url 'employee_list' %}" class="btn btn-secondary">
 
+        <i class="bi bi-arrow-left"></i>
+        Back to Employee List
 
-            <h4 class="card-title mb-4">
-                {{ employee.name }}
-            </h4>
-
-
-            <p>
-                <strong>Name:</strong> {{ employee.name }}
-            </p>
-
-
-            <p>
-                <strong>Email:</strong> {{ employee.email }}
-            </p>
-
-
-            <p>
-                <strong>Phone:</strong> {{ employee.phone }}
-            </p>
-
-
-            <p>
-                <strong>Department:</strong> {{ employee.department }}
-            </p>
-
-
-            <p>
-                <strong>Position:</strong> {{ employee.position }}
-            </p>
-
-
-            <p>
-                <strong>Salary:</strong> {{ employee.salary }}
-            </p>
-
-
-            <p>
-                <strong>Joining Date:</strong> {{ employee.joining_date }}
-            </p>
-
-
-            <p>
-                <strong>Location:</strong> {{ employee.location }}
-            </p>
+    </a>
 
 
 
-            <a href="{% url 'edit_employee' employee.id %}" class="btn btn-primary">
-                Edit
-            </a>
+
+    <h2 class="fw-bold mb-0">
+
+        <i class="bi bi-person-vcard-fill"></i>
+        Employee Details
+
+    </h2>
 
 
-        </div>
 
-
-    </div>
+    <div></div>
 
 
 </div>
+
+
+
+
+
+
+
+
+<div class="card shadow-lg border-0 p-4">
+
+
+
+<div class="card-body">
+
+
+
+
+
+<h4 class="card-title mb-4 fw-bold text-primary">
+
+
+    <i class="bi bi-person-circle"></i>
+
+    {{ employee.name }}
+
+
+</h4>
+
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-person"></i>
+Name:
+
+</strong>
+
+{{ employee.name }}
+
+</p>
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-envelope"></i>
+Email:
+
+</strong>
+
+{{ employee.email }}
+
+</p>
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-telephone"></i>
+Phone:
+
+</strong>
+
+{{ employee.phone }}
+
+</p>
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-building"></i>
+Department:
+
+</strong>
+
+<span class="badge bg-primary">
+
+{{ employee.department }}
+
+</span>
+
+
+</p>
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-briefcase-fill"></i>
+Position:
+
+</strong>
+
+
+<span class="badge bg-success">
+
+{{ employee.position }}
+
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-currency-rupee"></i>
+Salary:
+
+</strong>
+
+₹{{ employee.salary }}
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-calendar-event"></i>
+Joining Date:
+
+</strong>
+
+{{ employee.joining_date }}
+
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+<strong>
+
+<i class="bi bi-geo-alt-fill"></i>
+Location:
+
+</strong>
+
+{{ employee.location }}
+
+
+</p>
+
+
+
+
+
+
+
+
+<a href="{% url 'edit_employee' employee.id %}" 
+   class="btn btn-primary">
+
+
+    <i class="bi bi-pencil-square"></i>
+
+    Edit Employee
+
+
+</a>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
 
 
 {% endblock %}

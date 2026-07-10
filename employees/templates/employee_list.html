@@ -14,21 +14,36 @@ Employee List
 
 
     <div>
+
         <a href="{% url 'home' %}" class="btn btn-secondary">
-            ← Back
+
+            <i class="bi bi-arrow-left"></i>
+            Back
+
         </a>
+
     </div>
 
 
+
     <h2 class="fw-bold">
+
+        <i class="bi bi-people-fill"></i>
         Employee List
+
     </h2>
 
 
+
     <div>
+
         <a href="{% url 'add_employee' %}" class="btn btn-success">
-            + Add Employee
+
+            <i class="bi bi-person-plus-fill"></i>
+            Add Employee
+
         </a>
+
     </div>
 
 
@@ -36,11 +51,16 @@ Employee List
 
 
 
+
+
 <!-- Search Form -->
+
 
 <form method="GET" class="mb-3">
 
+
     <div class="input-group">
+
 
         <input
             type="text"
@@ -50,43 +70,66 @@ Employee List
             placeholder="Search employee by name">
 
 
+
         <button type="submit" class="btn btn-primary">
+
+            <i class="bi bi-search"></i>
             Search
+
         </button>
 
 
+
         <a href="{% url 'employee_list' %}" class="btn btn-secondary">
+
+            <i class="bi bi-x-circle"></i>
             Clear
+
         </a>
 
 
     </div>
+
 
 </form>
 
 
 
 
+
+
 <!-- Success Messages -->
+
 
 {% if messages %}
 
-    {% for message in messages %}
 
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+{% for message in messages %}
 
-            {{ message }}
 
-            <button type="button" 
-                    class="btn-close" 
-                    data-bs-dismiss="alert">
-            </button>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
 
-        </div>
 
-    {% endfor %}
+    {{ message }}
+
+
+    <button type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+
+    </button>
+
+
+</div>
+
+
+{% endfor %}
+
 
 {% endif %}
+
+
+
 
 
 
@@ -98,59 +141,158 @@ Employee List
 {% for emp in page_obj %}
 
 
+
 <div class="card mb-3 shadow-sm">
 
 
     <div class="card-body">
 
 
+
         <h5 class="card-title fw-bold">
+
+            <i class="bi bi-person-circle"></i>
             {{ emp.name }}
+
         </h5>
+
+
 
 
 
         <p class="card-text">
 
-            <strong>Department:</strong> {{ emp.department }} <br>
 
-            <strong>Position:</strong> {{ emp.position }} <br>
+            <strong>
 
-            <strong>Email:</strong> {{ emp.email }} <br>
+                <i class="bi bi-building"></i>
+                Department:
 
-            <strong>Phone:</strong> {{ emp.phone }} <br>
+            </strong>
 
-            <strong>Salary:</strong> ₹{{ emp.salary }}
+
+            <span class="badge bg-primary">
+
+                {{ emp.department }}
+
+            </span>
+
+
+
+            <br>
+
+
+
+            <strong>
+
+                <i class="bi bi-briefcase-fill"></i>
+                Position:
+
+            </strong>
+
+
+            <span class="badge bg-success">
+
+                {{ emp.position }}
+
+            </span>
+
+
+
+            <br>
+
+
+
+            <strong>
+
+                <i class="bi bi-envelope"></i>
+                Email:
+
+            </strong>
+
+            {{ emp.email }}
+
+
+
+            <br>
+
+
+
+            <strong>
+
+                <i class="bi bi-telephone"></i>
+                Phone:
+
+            </strong>
+
+            {{ emp.phone }}
+
+
+
+            <br>
+
+
+
+            <strong>
+
+                <i class="bi bi-currency-rupee"></i>
+                Salary:
+
+            </strong>
+
+            ₹{{ emp.salary }}
+
+
 
         </p>
 
 
 
 
-        <a href="{% url 'edit_employee' emp.id %}" 
+
+
+
+        <a href="{% url 'edit_employee' emp.id %}"
            class="btn btn-primary btn-sm">
 
+
+            <i class="bi bi-pencil-square"></i>
             Edit
 
+
         </a>
 
 
 
-        <a href="{% url 'delete_employee' emp.id %}" 
+
+
+
+        <a href="{% url 'delete_employee' emp.id %}"
            class="btn btn-danger btn-sm">
 
+
+            <i class="bi bi-trash-fill"></i>
             Delete
 
+
         </a>
 
 
 
-        <a href="{% url 'employee_detail' emp.id %}" 
+
+
+
+
+        <a href="{% url 'employee_detail' emp.id %}"
            class="btn btn-success btn-sm">
 
+
+            <i class="bi bi-eye-fill"></i>
             View
 
+
         </a>
+
 
 
 
@@ -161,21 +303,34 @@ Employee List
 
 
 
+
+
 {% empty %}
+
+
 
 
 
 <div class="alert alert-warning text-center mt-4">
 
+
     <h5>No employee found.</h5>
 
-    <p>Please search with another employee name.</p>
+
+    <p>
+        Please search with another employee name.
+    </p>
+
 
 </div>
 
 
 
+
+
 {% endfor %}
+
+
 
 
 
@@ -187,23 +342,35 @@ Employee List
 
 <nav>
 
+
 <ul class="pagination justify-content-center">
+
+
+
 
 
 {% if page_obj.has_previous %}
 
+
 <li class="page-item">
+
 
 <a class="page-link"
 href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
 
+
 Previous
+
 
 </a>
 
+
 </li>
 
+
 {% endif %}
+
+
 
 
 
@@ -212,35 +379,55 @@ Previous
 {% for num in page_obj.paginator.page_range %}
 
 
+
+
 {% if page_obj.number == num %}
+
+
 
 
 <li class="page-item active">
 
+
 <span class="page-link">
+
 {{ num }}
+
 </span>
 
+
 </li>
+
+
 
 
 
 {% else %}
 
 
+
+
 <li class="page-item">
+
 
 <a class="page-link"
 href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}">
 
+
 {{ num }}
 
+
 </a>
+
 
 </li>
 
 
+
+
 {% endif %}
+
+
 
 
 
@@ -250,27 +437,44 @@ href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}">
 
 
 
+
+
 {% if page_obj.has_next %}
 
+
+
+
 <li class="page-item">
+
 
 <a class="page-link"
 href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
 
+
 Next
+
 
 </a>
 
+
 </li>
+
+
 
 
 {% endif %}
 
 
 
+
+
+
 </ul>
 
+
 </nav>
+
+
 
 
 
