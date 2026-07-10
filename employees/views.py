@@ -6,8 +6,22 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 
 
+from .models import Employee
+
+
 def home(request):
-    return render(request, 'home.html')
+
+    employee_count = Employee.objects.count()
+
+    department_count = Employee.objects.values('department').distinct().count()
+
+    context = {
+        'employee_count': employee_count,
+        'department_count': department_count,
+    }
+
+    return render(request, 'home.html', context)
+    
 
 
 #🟢 LIST EMPLOYEES
